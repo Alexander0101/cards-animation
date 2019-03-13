@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+}
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+h1, h2, h3 {
+  margin: 0;
+  line-height: 1;
+}
+
+.wrapper {
+  width: 1300px;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.card {
+  width: 200px;
+  height: 300px;
+  border-radius: 12px;
+}
+
+.card img {
+  width: 200px;
+  height: 300px;
+  border-radius: 12px;
+}
+
+.card {
+  position: relative;
+  -webkit-perspective: 800px;
+          perspective: 800px;
+}
+
+.card div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 300px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  transition: .5s ease-in;
+  transition-property: background, -webkit-transform;
+  transition-property: transform, background;
+  transition-property: transform, background, -webkit-transform;
+}
+
+.card .front {
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.card .back {
+  border-radius: 12px;
+  background: #edf0f4;
+  -webkit-transform: rotateY(-180deg) translateZ(0);
+          transform: rotateY(-180deg) translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.card:hover .front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+.card:hover .back {
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+}
+
+.value {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+}
+
+.suit {
+  position: absolute;
+  width: 68px;
+  height: 160px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-size: 130px;
+}
+
+.value-bottom {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  transform: rotate(180deg);
+}
+
+.red {
+  color: red;
+}
